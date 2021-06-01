@@ -1,12 +1,14 @@
 
+use std::fmt;
+
 use crate::AttributesEnum;
 use crate::AnimateResponses;
 use crate::Animatable;
 
-#[derive(Debug)]
 #[derive(Copy)]
 #[derive(Clone)]
 #[derive(PartialEq)]
+#[derive(Debug)]
 pub struct BaseCounter {
     from_time:u128,
     to_time:u128,
@@ -81,7 +83,6 @@ fn distance (from:u128,to:u128)->u128{
 }
 
 ///////////////////////trait
-
 impl Animatable for BaseCounter{
 
     fn animate(&self, time_ms:u128) ->Option<AnimateResponses> {

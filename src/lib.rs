@@ -6,7 +6,7 @@ use std::fmt;
 pub use attributesenum::AttributesEnum;
 pub use animateresponses::AnimateResponses;
 pub use counter::BaseCounter;
-pub trait Animatable: fmt::Display {
+pub trait Animatable: fmt::Debug {
     fn animate(&self,time_ms:u128)->Option<AnimateResponses>;
 }
 
