@@ -51,9 +51,7 @@ impl BaseCounter{
     
     //----we had animate here but now nothing-!!!!!
 
-    pub fn get_attr_to_animate(&self)->AttributesEnum{
-        self.attr_to_animate
-    } 
+     
     
        
 }//end of impl block
@@ -89,6 +87,9 @@ impl Animatable for BaseCounter{
         }else {
             None
         }
+    }
+    fn get_attr_to_animate(&self)->AttributesEnum{
+        self.attr_to_animate
     }
     
 }//impl Animatable for BaseCounter
