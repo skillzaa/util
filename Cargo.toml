@@ -1,6 +1,6 @@
 [package]
 name = "bilzaa2dutil"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2018"
 authors = ["bilal <skillzaa.com@gmail.com>"]
 description = "It takes a time and then check the animation and return the current value"
