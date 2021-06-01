@@ -1,6 +1,4 @@
 
-use std::fmt;
-
 use crate::AttributesEnum;
 use crate::AnimateResponses;
 use crate::Animatable;
