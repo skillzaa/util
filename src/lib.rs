@@ -13,9 +13,9 @@ pub use animateresponses::AnimateResponses;
 //BaseCounter
 mod basecounter;
 pub use basecounter::BaseCounter;
-
+// calc
 mod calc;
 pub use calc::{percent_to_value,percentage};
-
-// mod simplecounter;
-// pub use simplecounter::
+//attributes
+mod attributes;
+pub use attributes::Attributes;

@@ -1,6 +1,6 @@
 [package]
 name = "bilzaa2dutil"
-version = "0.0.5"
+version = "0.0.6"
 edition = "2018"
 authors = ["bilal <skillzaa.com@gmail.com>"]
 description = "Major changes in 0.0.5. Now this module just provide single useful modules for the bilzaa2d app"
