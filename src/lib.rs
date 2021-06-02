@@ -17,5 +17,5 @@ pub use basecounter::BaseCounter;
 mod calc;
 pub use calc::{percent_to_value,percentage};
 
-mod simplecounter;
+// mod simplecounter;
 // pub use simplecounter::
