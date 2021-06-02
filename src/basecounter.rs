@@ -1,7 +1,5 @@
-
-use crate::AttributesEnum;
-use crate::AnimateResponses;
-use crate::Animatable;
+// mod attributesenum;
+use super::{AttributesEnum,AnimateResponses,percent_to_value,percentage,Animatable};
 
 #[derive(Copy)]
 #[derive(Clone)]
@@ -48,12 +46,7 @@ impl BaseCounter{
         //--time is valid check is seperate.       
         time_ms - self.from_time
     }      
-    
-    //----we had animate here but now nothing-!!!!!
-
-     
-    
-       
+    //----we had animate here but now nothing-!!!!!      
 }//end of impl block
 //----public API
 fn is_reverse(from:u128,to:u128)->bool{
@@ -78,15 +71,31 @@ fn distance (from:u128,to:u128)->u128{
     }
 }
 
-///////////////////////trait
 impl Animatable for BaseCounter{
 
     fn animate(&self, time_ms:u128) ->Option<AnimateResponses> {
-        if time_ms > 0 {
-            Some(AnimateResponses::U128(777))
-        }else {
-            None
-        }
+        /////////////////////////////
+        self.is_time_valid(time_ms)?;
+        let time_lapsed = self.time_lapsed(time_ms);
+        let time_perc_lapsed = percent_to_value(self.animation_duration as f64, time_lapsed as f64);
+        match time_perc_lapsed {
+            Some(time_perc_lapsed_value)=>{  
+                let per:Option<u128> = percentage(self.animation_distance as f64,time_perc_lapsed_value);
+                    match per {
+                        Some(y)=> {
+                            if self.is_reverse == true {
+                               return Some(AnimateResponses::U128(self.from - y))
+                            }else {
+                                let f = y as u128 + self.from;
+                                return Some(AnimateResponses::U128(f))
+                            }
+                        },
+                        None=> return None,   
+                    }
+            },
+            None=> return None,
+        }       
+        /////////////////////////////
     }
     fn get_attr_to_animate(&self)->AttributesEnum{
         self.attr_to_animate
