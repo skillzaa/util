@@ -4,8 +4,8 @@ version = "0.0.5"
 edition = "2018"
 authors = ["bilal <skillzaa.com@gmail.com>"]
 description = "Major changes in 0.0.5. Now this module just provide single useful modules for the bilzaa2d app"
-repository = "https://github.com/skillzaa/animation.git"
-homepage = "https://github.com/skillzaa/animation.git"
+repository = "https://github.com/skillzaa/util.git"
+homepage = "https://github.com/skillzaa/util.git"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
