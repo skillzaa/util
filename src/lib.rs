@@ -1,3 +1,9 @@
+//! Currently I am writing a 2d animation library in Rust. This crate
+//! is a collection of small but useful utilities that I have created
+//! for my library. I am making this available (with reasonable 
+//! documentation) to any one who wish to use it.
+//! ----------------------------------------------------
+
 //Attributes Enum
 mod attributesenum;
 pub use attributesenum::AttributesEnum;

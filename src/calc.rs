@@ -1,5 +1,10 @@
 use std::ops::{Div, Mul};
+/// This function takes a percentage and converts it back to the values.
 
+///  assert_eq!(25,super::percent_to_value(100,25)); 
+/// ```  
+/// # Errors
+/// Incase of division by zero this function will return 'None'
 pub fn percent_to_value(total:f64,value:f64)->Option<f64>{
     if total == 0_f64 || value == 0_f64 {
         return None

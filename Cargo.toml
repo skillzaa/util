@@ -1,9 +1,9 @@
 [package]
 name = "bilzaa2dutil"
-version = "0.0.6"
+version = "0.0.7"
 edition = "2018"
 authors = ["bilal <skillzaa.com@gmail.com>"]
-description = "Major changes in 0.0.5. Now this module just provide single useful modules for the bilzaa2d app"
+description = "Better Documentation and more tests in 0.0.6"
 repository = "https://github.com/skillzaa/util.git"
 homepage = "https://github.com/skillzaa/util.git"
 license = "MIT OR Apache-2.0"

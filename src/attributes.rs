@@ -1,4 +1,5 @@
 #[derive(Debug)]
+/// The 'Attributes' struct has all the attributes that any object in my library can have. Using these attributes we can animate the object. For example if we change the 'x' and 'y' of an element its position will change. Each attribute has its own get and set functions eg 'get_color' and 'set_color' for 'color' attributes. when the library becomes more complex all the logic for changing attributes will be placed in these getter and setter functions. 
 pub struct Attributes{
     //--strings
     bounding_rectangle_color:String,

@@ -7,6 +7,7 @@ use super::{AttributesEnum,AnimateResponses,percent_to_value,percentage,Animatab
 #[derive(Clone)]
 #[derive(PartialEq)]
 #[derive(Debug)]
+/// This is one of the Object in my library that implements the 'Animatable' trait. In future there will be more
 pub struct BaseCounter {
     from_time:u128,
     to_time:u128,
