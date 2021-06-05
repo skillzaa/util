@@ -22,17 +22,17 @@ fn get_a(from_time:f64,to_time:f64,from:u128,to:u128)->Animation{
 #[test]
 fn bullet_proof01(){
   let a:Animation = get_a(0.0,10.0,0,100); 
- test_a(a, 5000, AnimateResponses::U128(50));
+ test_a(a, 5000, AnimateResponses::U128f64(50,50.0));
 }
 
 #[test]
 fn bullet_proof02(){
   let a:Animation = get_a(0.0,10.0,100,0); 
- test_a(a, 5000, AnimateResponses::U128(50));
+ test_a(a, 5000, AnimateResponses::U128f64(50,50.0));
 }
 #[test]
 fn bullet_proof03(){
   let a:Animation = get_a(0.0,10.0,0,1000); 
- test_a(a, 5000, AnimateResponses::U128(500));
+ test_a(a, 5000, AnimateResponses::U128f64(500,500.0));
 }
 

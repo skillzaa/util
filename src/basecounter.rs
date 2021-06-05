@@ -79,22 +79,27 @@ impl Animatable for BaseCounter{
     fn animate(&self, time_ms:u128) ->Option<AnimateResponses> {
         /////////////////////////////
         self.is_time_valid(time_ms)?;
+        
         let time_lapsed = self.time_lapsed(time_ms);
+        
         let time_perc_lapsed = percent_to_value(self.animation_duration as f64, time_lapsed as f64)?;
-        
-        
-                let per:Option<f64> = percentage(self.animation_distance as f64,time_perc_lapsed);
-                    match per {
-                        Some(y)=> {
-                            if self.is_reverse == true {
-                               return Some(AnimateResponses::U128(self.from  - y as u128))
-                            }else {
-                                let f = y as u128 + self.from;
-                                return Some(AnimateResponses::U128(f))
-                            }
-                        },
-                        None=> return None,   
-                    }       
+          
+        let per:Option<f64> = percentage(self.animation_distance as f64,time_perc_lapsed);
+            
+            match per {
+                Some(y)=> {
+                    if self.is_reverse == true {
+                        let u = self.from  - y as u128;
+                        let f = self.from as f64  - y ;
+                        return Some(AnimateResponses::U128f64(u,f))
+                    }else {
+                        let u = y  as u128 + self.from ;
+                        let f = y  + self.from as f64;
+                        return Some(AnimateResponses::U128f64(u,f))
+                    }
+                },
+                None=> return None,   
+            }       
         /////////////////////////////
     }
     fn get_attr_to_animate(&self)->AttributesEnum{
