@@ -16,13 +16,16 @@ pub fn percentage(total:f64,value:f64)->Option<u128>{
     let b = a.mul(value);
     Some(b.abs() as u128)
 }
+//================================================
+//================================================
+//================================================
 #[cfg(test)]
 #[test]
 fn normal(){
     let a:Option<f64> = percent_to_value(1200_f64,600_f64);
     match a {
         Some(x)=>assert!( x == 50_f64),
-        None=>(),
+        None=>panic!("Wrong"),
     }
 }
 #[cfg(test)]
@@ -57,6 +60,7 @@ fn the_loop(){
         
     }
 }
+
 //================================================
 #[cfg(test)]
 #[test]

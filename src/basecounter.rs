@@ -1,3 +1,5 @@
+use std::ops::Mul;
+
 // mod attributesenum;
 use super::{AttributesEnum,AnimateResponses,percent_to_value,percentage,Animatable};
 
@@ -18,19 +20,19 @@ pub struct BaseCounter {
 //==========================================
 
 impl BaseCounter{
-    pub fn new(from_time:u128,to_time:u128,from:u128,to:u128,attr_to_animate:AttributesEnum)->Option<BaseCounter>{
+    pub fn new(from_time:f64,to_time:f64,from:u128,to:u128,attr_to_animate:AttributesEnum)->Option<BaseCounter>{
     assert!(from_time < to_time,"From time can not be bigger than To time");   
     assert!(from < 5000,"From value is too large");
     assert!(to < 5000,"To value is too large");
-        let from_time_millis:u128 = from_time * 1000;
-        let to_time_millis:u128 = to_time * 1000;
+        let from_time_millis = from_time.mul(1000_f64);
+        let to_time_millis = to_time.mul(1000_f64);
             Some(BaseCounter {
-                from_time : from_time_millis,
-                to_time : to_time_millis,
+                from_time : from_time_millis as u128,
+                to_time : to_time_millis as u128,
                 from,
                 to,
                 is_reverse: is_reverse(from, to),
-                animation_duration : duration(to_time_millis, from_time_millis), 
+                animation_duration : duration(to_time_millis as u128, from_time_millis as u128), 
                 animation_distance:distance(from, to),
                 attr_to_animate:attr_to_animate,
             })
